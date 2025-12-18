@@ -1,0 +1,113 @@
+{
+  "title": "Steam Store Scraper Configuration",
+  "description": "Configure your Steam Store scraping job. Scrapes game pages directly for fast, reliable data collection.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrl": {
+      "title": "Custom Steam URL (Optional)",
+      "type": "string",
+      "description": "Start with a specific Steam Store URL. If provided, overrides keyword and sort settings.",
+      "editor": "textfield",
+      "example": "https://store.steampowered.com/search/?sort_by=Reviews_DESC",
+      "nullable": true
+    },
+    "keyword": {
+      "title": "Search Games By Name/Keyword",
+      "type": "string",
+      "description": "Search for specific games, genres, or keywords (e.g., 'action', 'RPG', 'free to play'). Leave empty to browse all.",
+      "editor": "textfield",
+      "example": "action",
+      "nullable": true
+    },
+    "sortBy": {
+      "title": "Sort Results",
+      "type": "string",
+      "description": "How to sort the search results.",
+      "editor": "select",
+      "default": "_ASC",
+      "prefill": "_ASC",
+      "enum": [
+        "_ASC",
+        "Released_DESC",
+        "Price_ASC",
+        "Price_DESC",
+        "Name_ASC",
+        "Reviews_DESC"
+      ],
+      "enumTitles": [
+        "Relevance",
+        "Newest Releases",
+        "Price (Low to High)",
+        "Price (High to Low)",
+        "Name (A-Z)",
+        "Best Reviews"
+      ]
+    },
+    "maxResults": {
+      "title": "Max Games to Scrape",
+      "type": "integer",
+      "description": "Maximum number of games to collect (1-5000).",
+      "minimum": 1,
+      "maximum": 5000,
+      "default": 100,
+      "prefill": 100,
+      "editor": "number"
+    },
+    "maxPages": {
+      "title": "Max Pages",
+      "type": "integer",
+      "description": "Maximum pages to crawl (~25 games per page). Higher = more results but slower.",
+      "minimum": 1,
+      "maximum": 200,
+      "editor": "number",
+      "default": 5,
+      "prefill": 5
+    },
+    "maxConcurrency": {
+      "title": "Concurrency (Speed)",
+      "type": "integer",
+      "description": "How many games to scrape in parallel (1-50). Higher = faster but may trigger rate limits.",
+      "minimum": 1,
+      "maximum": 50,
+      "default": 10,
+      "prefill": 10,
+      "editor": "number"
+    },
+    "onlyOnSale": {
+      "title": "Only Games on Sale",
+      "type": "boolean",
+      "description": "If enabled, scrape only discounted games.",
+      "editor": "checkbox",
+      "default": false,
+      "prefill": false
+    },
+    "onlyReleased": {
+      "title": "Only Released Games",
+      "type": "boolean",
+      "description": "If enabled, skip upcoming/unreleased games.",
+      "editor": "checkbox",
+      "default": true,
+      "prefill": true
+    },
+    "proxyConfiguration": {
+      "title": "Proxy Settings",
+      "type": "object",
+      "description": "Use Apify Proxy for better reliability and faster scraping.",
+      "editor": "proxy",
+      "default": {
+        "useApifyProxy": true,
+        "apifyProxyGroups": [
+          "RESIDENTIAL"
+        ]
+      },
+      "prefill": {
+        "useApifyProxy": true,
+        "apifyProxyGroups": [
+          "RESIDENTIAL"
+        ]
+      }
+    }
+  },
+  "required": []
+}

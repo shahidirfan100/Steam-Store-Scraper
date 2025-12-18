@@ -1,0 +1,20 @@
+{
+  "actorSpecification": 1,
+  "name": "steam-store-scraper",
+  "title": "Steam Store Scraper",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "nodeJsVersion": "22",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "categories": ["ECOMMERCE"],
+  "seo": {
+    "title": "Steam Store Scraper - Extract Game Data, Prices & Reviews",
+    "description": "Extract comprehensive game data from Steam Store including prices, discounts, reviews, genres, and metadata. Fast, reliable scraper with JSON API support."
+  }
+}

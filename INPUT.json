@@ -1,0 +1,13 @@
+{
+  "keyword": "action",
+  "sortBy": "_ASC",
+  "maxResults": 50,
+  "maxPages": 3,
+  "maxConcurrency": 10,
+  "onlyOnSale": false,
+  "onlyReleased": true,
+  "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": ["RESIDENTIAL"]
+  }
+}

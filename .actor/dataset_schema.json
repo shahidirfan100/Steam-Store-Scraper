@@ -1,0 +1,63 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "title",
+          "price",
+          "discountPercent",
+          "releaseDate",
+          "developer",
+          "genres",
+          "reviewSummary",
+          "platforms",
+          "url"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "title": {
+            "label": "Game Title",
+            "format": "text"
+          },
+          "price": {
+            "label": "Price",
+            "format": "text"
+          },
+          "discountPercent": {
+            "label": "Discount",
+            "format": "text"
+          },
+          "releaseDate": {
+            "label": "Release Date",
+            "format": "text"
+          },
+          "developer": {
+            "label": "Developer",
+            "format": "text"
+          },
+          "genres": {
+            "label": "Genres",
+            "format": "text"
+          },
+          "reviewSummary": {
+            "label": "Reviews",
+            "format": "text"
+          },
+          "platforms": {
+            "label": "Platforms",
+            "format": "text"
+          },
+          "url": {
+            "label": "URL",
+            "format": "link"
+          }
+        }
+      }
+    }
+  }
+}
